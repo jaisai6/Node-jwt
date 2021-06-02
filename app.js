@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 
 // database connection
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-  .then((result) => app.listen(3000, () => console.log('Server up and running!')))
+  .then((result) => app.listen(3000 || process.env.PORT, () => console.log('Server up and running!')))
   .catch((err) => console.log(err));
 
 // routes
